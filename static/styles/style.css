@@ -1,0 +1,96 @@
+
+    html{
+        background-color:white;
+    }
+
+
+    .navbar{
+        width: 100%;
+        margin: auto;
+        padding: 2px 0;
+        display: flex;
+        position:absolute;
+        justify-content: flex-end;
+        background-color:bisque;
+        z-index: 2;
+        top: 0;
+        right: 0;
+       
+      }
+      .navbar h2{
+        margin: auto;
+        margin-left: 1cm;
+        font-size: medium;
+      }
+      
+      .navbar ul li{
+      list-style: none; /*default*/
+      display: inline-block;
+      margin: 0 20px;
+      position: relative;
+      margin-top: 0.2cm;
+      }
+      
+      .navbar ul li a{
+      text-decoration: none;
+      color: black;
+      position: relative;
+      font-size: 16px;
+      
+      }
+
+    h1{
+        margin-top: 2cm;
+        text-align: center;
+    }
+    h2{
+        padding-top: 0.5cm;
+        text-align: left;
+        color: gray;
+        text-underline-offset:inherit;
+    }
+
+    textarea::before {
+        font-size: 1rem;
+        color:dimgray;
+        font-family: 'Calibri', sans-serif;
+    }
+    textarea {
+        margin-top: 0.2 cm;
+        font-size: 1rem;
+        line-height: 1.5em;
+        font-family: 'Roboto';
+        resize: none;
+        width: 100%;
+        max-width: 900px;
+        border-color: darkgrey;
+        border-radius: 8px;
+        
+    }
+    
+    form {
+        text-align: center;
+        margin-top: 1.5cm;
+    }
+    
+    h4 {
+        margin-top: 1.5cm;
+        text-align: center;
+        color: darkslategray;
+    }
+    h5{
+        color: crimson;
+        text-align: center;
+        font-size: larger;
+    }
+    p{
+        color: darkslategrey;
+        text-align: left;
+    }
+    button {
+        padding: 0.1cm 7cm;
+        background-color:burlywood;
+        border: none;
+        border-radius: 2px;
+    }
+    

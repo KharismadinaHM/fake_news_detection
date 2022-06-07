@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html `lang="en">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+<!-- <link rel="stylesheet" href="mystyle.css"> -->
+
+<!-- Navigasi bar -->
+<div class="navbar"> 
+    <!-- <img  class="logo" /> -->
+    <h2>Fake News Detection</h2>
+    <ul>
+        <li><a href="https://kharismadinahm.github.io/MyWeb/">About Me</a></li>
+    </ul>
+</div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <title>Deteksi Kebenaran Suatu Berita</title>
+    
+</head>
+<body>
+   <h1>Deteksi Judul Berita Berbahasa Indonesia</h1>
+    <form action="/" method="POST">
+        <!-- <input type="text" name="news" placeholder="keyword"> -->
+        <textarea id="text" name="news" rows="7" cols="10"
+        wrap="off" placeholder='Masukkan Text....' ></textarea>
+        
+        <button type="submit"> PREDICT</button>
+    </form>
+
+    <h4>Hasil Prediksi Algoritma Random Forest Classifier : <br></h4>
+    <h5>{{ prediction }}</h5>
+
+    <h4>Disclaimer :<br>
+        Hasil Prediksi jangan jadikan acuan, <br>
+        karena dataset kami hanya mengolah berita dari indonesia <br>
+        dengan periode waktu 1 Januari 2020 hingga 31 Maret 2022.
+    </h4>
+
+    <h2>Bagaimana Cara kerjanya ?</h2>
+
+    <p>Project ini merupakan project machine learning <br>
+        yang pengolahan datanya menggunakan TF-IDF<br>
+    dan untuk memprediksi hasilnya apakah Hoax atau Real <br>
+    menggunakan Algoritma Random Forest Classifier.
+    
+    </p>
+
+</body>
+</html>
