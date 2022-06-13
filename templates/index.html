@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html `lang="en">
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
-<!-- <link rel="stylesheet" href="mystyle.css"> -->
+
 
 <!-- Navigasi bar -->
 <div class="navbar"> 
@@ -22,13 +22,19 @@
    <h1>Deteksi Judul Berita Berbahasa Indonesia</h1>
     <form action="/" method="POST">
         <!-- <input type="text" name="news" placeholder="keyword"> -->
-        <textarea id="text" name="news" rows="7" cols="10"
-        wrap="off" placeholder='Masukkan Text....' ></textarea>
+        
+        <textarea id="narasi" name="news" rows="7" cols="10"
+        wrap="off" type="text" placeholder="masukkan text..." ></textarea>
+        
         
         <button type="submit"> PREDICT</button>
     </form>
 
-    <h4>Hasil Prediksi Algoritma Random Forest Classifier : <br></h4>
+   
+
+
+    <h4>Narasi : {{ news }} <br>Hasil Prediksi Algoritma Random Forest Classifier : <br></h4>
+    
     <h5>{{ prediction }}</h5>
 
     <h4>Disclaimer :<br>
@@ -36,15 +42,22 @@
         karena dataset kami hanya mengolah berita dari indonesia <br>
         dengan periode waktu 1 Januari 2020 hingga 31 Maret 2022.
     </h4>
-
+    <hr/>
     <h2>Bagaimana Cara kerjanya ?</h2>
-
-    <p>Project ini merupakan project machine learning <br>
-        yang pengolahan datanya menggunakan TF-IDF<br>
-    dan untuk memprediksi hasilnya apakah Hoax atau Real <br>
-    menggunakan Algoritma Random Forest Classifier.
     
+<fieldset>
+    <p>
+        Dalam aplikasi berbasis web ini terdapat dataset  yang terbagi 2 : pertama, dataset berita  hoax dari web Turnbackhoax.id. Kedua , dataset berita real dari Kompas.com.
+        Ruang lingkup yang diambil hanya judul berita dan tanggal yang ditetapkan dari 1 Januari 2020 hingga 31 Maret 2022.
+         Data tersebut diperoleh dengan cara scrapping menggunakan extension Google Chrome bernama web scraper.
+          Setelah itu , dataset hoax dilabelkan menjadi 7 kategori diantaranya : Politik , Sosial , Sains , Ekonomi, Bencana, Teknologi dan Entertainment.Ini dilakukan untuk melihat pendistribusian data hoax yang tersebar di berbagai bidang. 
+          Berikutnya dataset hoax digabungkan dengan  dataset real lalu dilabelkan class dengan value 0 dan 1 . Untuk class bervalue 0 berarti data tersebut “Hoax” dan class bervalue 1 berarti data itu “Real”. 
+          Kemudian, Dataset yang sudah digabung memerlukan tahapan preprocessing untuk membersihkan kata-kata yang tidak diperlukan seperti tanda baca , spasi berlebih , url , serta unsur lainnya. 
+       <br>Setelah dataset bersih dilakukan pembobotan menggunakan Term Frequency dan  Invers Document Frequency (TF-IDF). TF-IDF ini berfungsi untuk menghitung nilai bobot pada setiap kata yang ada di dokumen. 
+       Berikutnya, dataset telah memiliki bobot maka dilakukan klasifikasi menggunakan algoritma Random Forest Classifier (RFC). 
+       RFC memiliki keunggulan seperti : berjalan efektif dalam mengolah data berskala menengah hingga besar, mendapatkan permodelan yang cukup baik dengan cepat, mudah digunakan. 
+       Selanjutnya diperlukan pengujian data   untuk mendapatkan akurasi yang baik. Terakhir,agar  user dapat mencoba fitur deteksi hoax ini maka diperlukan web yang dapat memfasilitasi user menggunakan deployment Heroku.
     </p>
-
+</fieldset>
 </body>
 </html>
