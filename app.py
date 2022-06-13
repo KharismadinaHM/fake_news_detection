@@ -19,9 +19,9 @@ def pred():
         predict = model.predict(tfidf.transform([news]))
         
         if predict == 0:
-            return render_template("index.html", prediction = 'Narasi tersebut Hoax , Mohon untuk tidak membagikan lagi ke Internet.')
+            return render_template("index.html", prediction = 'Narasi tersebut Hoax , Mohon untuk tidak membagikan lagi ke Internet.',news=news)
         elif predict == 1:
-            return render_template("index.html", prediction = 'Narasi tersebut Real')
+            return render_template("index.html", prediction = 'Narasi tersebut Real',news=news)
         #return render_template("index.html", prediction_text = 
         #"Jawabannya {}".format(predict))
 
