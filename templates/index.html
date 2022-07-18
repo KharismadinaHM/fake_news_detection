@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html `lang="en">
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
-
+<!-- <link rel="stylesheet" href="mystyle.css"> -->
 
 <!-- Navigasi bar -->
 <div class="navbar"> 
     <!-- <img  class="logo" /> -->
-    <h2>Fake News Detection</h2>
+    <h2>Projek Data</h2>
     <ul>
         <li><a href="https://kharismadinahm.github.io/MyWeb/">About Me</a></li>
     </ul>
@@ -15,11 +15,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width-device-width, initial-scale-1.0">
-    <title>Deteksi Kebenaran Suatu Berita</title>
+    <title>Sistem Klasifikasi Berita</title>
     
 </head>
 <body>
-   <h1>Deteksi Judul Berita Berbahasa Indonesia</h1>
+   <h1>Sistem Klasifikasi Berita Indonesia</h1>
     <form action="/" method="POST">
         <!-- <input type="text" name="news" placeholder="keyword"> -->
         
@@ -33,12 +33,12 @@
    
 
 
-    <h4>Narasi : {{ news }} <br>Hasil Prediksi Algoritma Random Forest Classifier : <br></h4>
+    <h4>Narasi : {{ news }} <br>Hasil Klasifikasi Dengan Algoritma Random Forest Classifier : <br></h4>
     
     <h5>{{ prediction }}</h5>
 
     <h4>Disclaimer :<br>
-        Hasil Prediksi jangan jadikan acuan, <br>
+        Hasil Klasifikasi jangan jadikan acuan, <br>
         karena dataset kami hanya mengolah berita dari indonesia <br>
         dengan periode waktu 1 Januari 2020 hingga 31 Maret 2022.
     </h4>
@@ -47,16 +47,17 @@
     
 <fieldset>
     <p>
-        Dalam aplikasi berbasis web ini terdapat dataset  yang terbagi 2 : pertama, dataset berita  hoax dari web Turnbackhoax.id. Kedua , dataset berita real dari Kompas.com.
-        Ruang lingkup yang diambil hanya judul berita dan tanggal yang ditetapkan dari 1 Januari 2020 hingga 31 Maret 2022.
-         Data tersebut diperoleh dengan cara scrapping menggunakan extension Google Chrome bernama web scraper.
+        Dalam Sistem berbasis web ini terdapat dataset  yang terbagi 2 : pertama, dataset berita  hoax dari web Turnbackhoax.id. Kedua , dataset berita real dari Kompas.com.
+        Ruang lingkup yang diambil ialah judul berita dan tanggal yang ditetapkan dari 1 Januari 2020 hingga 31 Maret 2022. Serta menggunakan bahasa pemrograman Python dan Google Colabs
+        sebagai tempat pengolahannya.
+         Dataset Berita Hoax dan Real diperoleh dengan cara scrapping menggunakan extension Google Chrome bernama web scraper.
           Setelah itu , dataset hoax dilabelkan menjadi 7 kategori diantaranya : Politik , Sosial , Sains , Ekonomi, Bencana, Teknologi dan Entertainment.Ini dilakukan untuk melihat pendistribusian data hoax yang tersebar di berbagai bidang. 
           Berikutnya dataset hoax digabungkan dengan  dataset real lalu dilabelkan class dengan value 0 dan 1 . Untuk class bervalue 0 berarti data tersebut “Hoax” dan class bervalue 1 berarti data itu “Real”. 
           Kemudian, Dataset yang sudah digabung memerlukan tahapan preprocessing untuk membersihkan kata-kata yang tidak diperlukan seperti tanda baca , spasi berlebih , url , serta unsur lainnya. 
        <br>Setelah dataset bersih dilakukan pembobotan menggunakan Term Frequency dan  Invers Document Frequency (TF-IDF). TF-IDF ini berfungsi untuk menghitung nilai bobot pada setiap kata yang ada di dokumen. 
        Berikutnya, dataset telah memiliki bobot maka dilakukan klasifikasi menggunakan algoritma Random Forest Classifier (RFC). 
        RFC memiliki keunggulan seperti : berjalan efektif dalam mengolah data berskala menengah hingga besar, mendapatkan permodelan yang cukup baik dengan cepat, mudah digunakan. 
-       Selanjutnya diperlukan pengujian data   untuk mendapatkan akurasi yang baik. Terakhir,agar  user dapat mencoba fitur deteksi hoax ini maka diperlukan web yang dapat memfasilitasi user menggunakan deployment Heroku.
+       Selanjutnya diperlukan pengujian data   untuk mendapatkan akurasi klasifikasi berita yang baik. Terakhir,agar masyarakat umum (user) dapat mencoba fitur deteksi hoax ini maka diperlukan web yang dapat memfasilitasi user menggunakan deployment Heroku.
     </p>
 </fieldset>
 </body>
